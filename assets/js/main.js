@@ -45,7 +45,7 @@ window.onload = function(){
     })
 
     
-    if($(window).width() >= 768) {
+    if($(window).width() >= 769) {
         $('.main').unbind('click');
     }
     else{
@@ -54,4 +54,56 @@ window.onload = function(){
             
         })
     }
+
+
+    if (window.innerWidth <= 768) {
+        $('.your-slider').slick('unslick');
+      }
+      else {
+        
+            $('.filter__list').slick({
+                infinite: false,
+                slidesToShow: 9,
+                slidesToScroll: 3,
+                arrows: false,
+                dots:true,
+                fade: false,
+                responsive: [
+                    {
+                    breakpoint: 900,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4
+                      }
+                    },
+                    {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 4
+                        }
+                    },
+                    {
+                    breakpoint: 1500,
+                    settings: {
+                        slidesToShow: 6,
+                        slidesToScroll: 4
+                        }
+                    },
+                    {
+                    breakpoint: 1700,
+                    settings: {
+                        slidesToShow: 8,
+                        slidesToScroll: 4
+                        }
+                    }
+                  ]
+              });
+        
+      }
+
+      
+    
+    
+   
 }

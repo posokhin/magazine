@@ -94,6 +94,7 @@
 }
 
 .filter__link{
+    outline: none;
     padding: 30px 0;
     font-size: 1.2em;
     color: black;
@@ -119,6 +120,7 @@
 }
 .filter__title{
     font-size: 1.2em;
+    text-align: center;
 }
 .filter__num{
     position: absolute;
@@ -241,7 +243,7 @@
     transition: .3s;
 }
 .dishes__item:hover .dishes__item-bottom::before{
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #F22C2C;
 }
 .dishes__item-title{
     font-size: 1.2em;
@@ -272,6 +274,28 @@
 }
 .btn__fix{
     display: none;
+}
+.slick-dots{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px 10px 0px;
+}
+.slick-dots li.slick-active{
+    background: #F22C2C;
+    border-radius: 50%;
+}
+.slick-dots li{
+    margin-right: 20px;
+}
+.slick-dots li button{
+    outline: none;
+    border: none;
+    background: transparent;
+    border: 2px solid #F22C2C;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-indent: -99999px;
 }
 @media screen and (max-width: 768px){
     .wrapper{
