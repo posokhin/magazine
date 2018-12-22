@@ -29,9 +29,22 @@ window.onload = function(){
         
     }
 
+    var btn = $('.header__menu-burger');
+    var menuTop = $('.header__list');
+
+    btn.on('click',function(){
+        menuTop.slideToggle();
+    })
+
+    var btnFilter = $('.btn__fix');
+    var filter = $('.filter')
     
 
-    
+    btnFilter.on('click',function(){
+        filter.slideToggle();
+    })
 
-
+    $('.main').on('click', function(){
+        filter.slideUp();
+    })
 }
