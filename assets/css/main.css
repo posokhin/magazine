@@ -84,7 +84,10 @@
 .filter__list{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    overflow: hidden;
+}
+.filter__item{
+    margin-right: 40px;
 }
 .filter__item:hover  .hover{
     opacity: 1;
@@ -497,5 +500,29 @@
         left: 0;
         bottom: 0;
         background: linear-gradient(359.18deg, #FFFFFF 19.3%, rgba(255, 255, 255, 0) 83.57%);
+    }
+}
+@media (max-width:1200px) and (min-width:769px) {
+    
+    .header__user-link-name{
+        display: none;
+    }
+    .about__character-right{
+        display: none;
+    }
+    .about__character-left{
+        width: 100%;
+        max-width: 100%;
+        justify-content: space-evenly;
+        padding: 20px;
+    }
+    .about__title{
+        margin: 0;
+    }
+    .about__item{
+        margin-right: 20px;
+    }
+    .aside__image{
+        max-width: 70%;
     }
 }

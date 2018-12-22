@@ -44,7 +44,14 @@ window.onload = function(){
         filter.slideToggle();
     })
 
-    $('.main').on('click', function(){
-        filter.slideUp();
-    })
+    
+    if($(window).width() >= 768) {
+        $('.main').unbind('click');
+    }
+    else{
+        $('.main').on('click', function(){
+            filter.slideUp();
+            
+        })
+    }
 }
