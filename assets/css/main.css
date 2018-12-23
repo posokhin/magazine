@@ -695,11 +695,13 @@
         width: 100%;
         display: block;
         padding: 10px;
+        margin-top: 60px;
     }
     .close{
         position: absolute;
-        top: -1.5rem;
-        right: -1rem;
+        top: 0.5rem;
+        right: 1rem;
+        padding: 0;
     }
     .dishes__item-open-img{
         width: auto;
