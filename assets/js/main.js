@@ -80,6 +80,9 @@ window.onload = function(){
         e.preventDefault();
         $('.dishes__item-open').slideDown(600);
 
+        $('.main').css('filter','blur(15px)');
+        $('.main').css('transition','0.3s'); 
+
         var ccal = $('.dishes__item-open-right-item-name');
         function fadeInUp(el){
             el.addClass('animated fadeInUp');
@@ -108,6 +111,7 @@ window.onload = function(){
     }) 
     $('.close').on('click', function(){
         $('.dishes__item-open').slideUp();
+        $('.main').css('filter','blur(0px)');
     })
 
     
