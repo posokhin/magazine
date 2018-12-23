@@ -80,10 +80,11 @@ window.onload = function(){
         e.preventDefault();
         $('.dishes__item-open').slideDown(600);
 
-        $('.main').css('filter','blur(15px)');
-        $('.main').css('transition','0.3s'); 
+        if (window.innerWidth > 768){
+            $('.main').css('filter','blur(15px)');
+            $('.main').css('transition','0.3s'); 
+        }
 
-       
         function fadeInUp(el){
             el.addClass('animated fadeInUp');
             setTimeout(function(){
