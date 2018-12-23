@@ -83,18 +83,27 @@ window.onload = function(){
         $('.main').css('filter','blur(15px)');
         $('.main').css('transition','0.3s'); 
 
-        var ccal = $('.dishes__item-open-right-item-name');
+       
         function fadeInUp(el){
             el.addClass('animated fadeInUp');
+            setTimeout(function(){
+                el.removeClass('animated fadeInUp');
+            },2000)
+            el.css('opacity','1');
         }
         function fadeInDown(el){
             el.addClass('animated fadeInDown');
+            setTimeout(function(){
+                el.removeClass('animated fadeInDown');
+            },2000)
+            el.css('opacity','1');
         }
 
         
         setTimeout(function(){
             fadeInDown($('.dishes__item-open-right-title'));
         },500);
+        
         setTimeout(function(){
             fadeInDown($('.dishes__item-open-right-desk-one'));
         },900);
@@ -105,13 +114,19 @@ window.onload = function(){
             fadeInUp($('.dishes__item-open-right-item-value'));
         },1000);
         setTimeout(function(){
-            fadeInUp(ccal);
+            fadeInUp($('.dishes__item-open-right-item-name'));
         },1000);
         
     }) 
     $('.close').on('click', function(){
         $('.dishes__item-open').slideUp();
         $('.main').css('filter','blur(0px)');
+
+        $('.dishes__item-open-right-title').css('opacity','0');
+        $('.dishes__item-open-right-desk-one').css('opacity','0');
+        $('.dishes__item-open-right-desk-two').css('opacity','0');
+        $('.dishes__item-open-right-item-value').css('opacity','0');
+        $('.dishes__item-open-right-item-name').css('opacity','0');
     })
 
     
