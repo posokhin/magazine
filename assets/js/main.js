@@ -1,34 +1,6 @@
 window.onload = function(){
     
     
-    
-    
-
-    var plus = document.querySelectorAll('.dishes__num-plus');
-    
-    var curr = document.querySelectorAll('.dishes__num-current');
-    
-    var minus =document.querySelectorAll('.dishes__num-minus');
-
-
-    function show(){
-        
-        this.classList.toggle('show');
-     
-    }
-
-    for(var k=0;k<minus.length;k++){
-        minus[k] = show;
-    }
-
-    for(var i=0;i<plus.length;i++){
-        
-        plus[i].onclick = show;
-
-        
-        
-    }
-
     var btn = $('.header__menu-burger');
     var menuTop = $('.header__list');
 
@@ -100,9 +72,44 @@ window.onload = function(){
                   ]
               });
         
-      }
+    }
 
-      
+    $('.dishes__item-open').css('display','flex').hide();
+
+    $('.dishes__item-link').on('click',function(e){
+        e.preventDefault();
+        $('.dishes__item-open').slideDown(600);
+
+        var ccal = $('.dishes__item-open-right-item-name');
+        function fadeInUp(el){
+            el.addClass('animated fadeInUp');
+        }
+        function fadeInDown(el){
+            el.addClass('animated fadeInDown');
+        }
+
+        
+        setTimeout(function(){
+            fadeInDown($('.dishes__item-open-right-title'));
+        },500);
+        setTimeout(function(){
+            fadeInDown($('.dishes__item-open-right-desk-one'));
+        },900);
+        setTimeout(function(){
+            fadeInDown($('.dishes__item-open-right-desk-two'));
+        },900);
+        setTimeout(function(){
+            fadeInUp($('.dishes__item-open-right-item-value'));
+        },1000);
+        setTimeout(function(){
+            fadeInUp(ccal);
+        },1000);
+        
+    }) 
+    $('.close').on('click', function(){
+        $('.dishes__item-open').slideUp();
+    })
+
     
     
    
