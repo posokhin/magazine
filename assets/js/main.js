@@ -135,12 +135,15 @@ window.onload = function(){
     var plus = document.querySelector('.dishes__num-open-plus');
     var curent = document.querySelector('.dishes__num-open-current');
     var priceTotal = document.querySelector('.dishes__item-open-right-bottom-right-sum');
+    var cal = document.querySelectorAll('.dishes__item-open-right-item-value');
     
 
     plus.onclick = function(){
         curent.innerHTML++;
         priceTotal.innerHTML = parseInt(priceTotal.innerHTML) + parseInt(246);
-        
+        for(var i = 0; i < cal.length;i++){
+            cal[i].innerHTML = parseInt(cal[i].innerHTML) + parseInt(cal[i].innerHTML) ;
+        }
     }
 
     var min = document.querySelector('.dishes__num-open-minus');
@@ -154,6 +157,9 @@ window.onload = function(){
         else{
             curent.innerHTML--;
             priceTotal.innerHTML = parseInt(priceTotal.innerHTML) - parseInt(246);
+            for(var i = 0; i < cal.length;i++){
+                cal[i].innerHTML = parseInt(cal[i].innerHTML) - parseInt(cal[i].innerHTML)/2 ;
+            }
         }
         
         
