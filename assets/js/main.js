@@ -131,6 +131,35 @@ window.onload = function(){
     })
 
     
+    //var curentNum = parseInt(document.querySelector('.dishes__num-open-current').innerHTML);
+    var plus = document.querySelector('.dishes__num-open-plus');
+    var curent = document.querySelector('.dishes__num-open-current');
+    var priceTotal = document.querySelector('.dishes__item-open-right-bottom-right-sum');
+    
+
+    plus.onclick = function(){
+        curent.innerHTML++;
+        priceTotal.innerHTML = parseInt(priceTotal.innerHTML) + parseInt(246);
+        
+    }
+
+    var min = document.querySelector('.dishes__num-open-minus');
+    
+
+    min.onclick = function(){
+        var curent = document.querySelector('.dishes__num-open-current');
+        if(curent.innerHTML <= 0){
+            curent = 0;
+        }
+        else{
+            curent.innerHTML--;
+            priceTotal.innerHTML = parseInt(priceTotal.innerHTML) - parseInt(246);
+        }
+        
+        
+    }
+
+    
     
    
 }
