@@ -165,6 +165,24 @@ window.onload = function(){
         
     }
 
+
+    var wrap = document.querySelectorAll('.dishes__item-num');
+
+    wrap.forEach(function(item,i,wrap){
+        var plus = document.querySelectorAll('.dishes__num-plus');
+        var currDish = document.querySelectorAll('.dishes__num-current');
+        var min = document.querySelectorAll('.dishes__num-minus');
+        plus[i].onclick = function(){
+            currDish[i].innerHTML++;
+        }
+        min[i].onclick = function(){
+            currDish[i].innerHTML--;
+            if(currDish[i].innerHTML <= 0){
+                currDish[i].innerHTML = 0;
+            }
+        }
+    })
+
     
     
    
