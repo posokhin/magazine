@@ -129,6 +129,16 @@ window.onload = function(){
         $('.dishes__item-open-right-item-value').css('opacity','0');
         $('.dishes__item-open-right-item-name').css('opacity','0');
     })
+    $('.dishes__item-open-right-bottom-right-add').on('click',function(){
+        $('.dishes__item-open').slideUp();
+        $('.main').css('filter','blur(0px)');
+
+        $('.dishes__item-open-right-title').css('opacity','0');
+        $('.dishes__item-open-right-desk-one').css('opacity','0');
+        $('.dishes__item-open-right-desk-two').css('opacity','0');
+        $('.dishes__item-open-right-item-value').css('opacity','0');
+        $('.dishes__item-open-right-item-name').css('opacity','0');
+    })
 
     
     //var curentNum = parseInt(document.querySelector('.dishes__num-open-current').innerHTML);
@@ -142,7 +152,8 @@ window.onload = function(){
         curent.innerHTML++;
         priceTotal.innerHTML = parseInt(priceTotal.innerHTML) + parseInt(246);
         for(var i = 0; i < cal.length;i++){
-            cal[i].innerHTML = parseInt(cal[i].innerHTML) + parseInt(cal[i].innerHTML) ;
+            startVal = cal[i].getAttribute('data-val');
+            cal[i].innerHTML =  parseInt(cal[i].innerHTML) + parseInt(startVal);
         }
     }
 
@@ -158,7 +169,8 @@ window.onload = function(){
             curent.innerHTML--;
             priceTotal.innerHTML = parseInt(priceTotal.innerHTML) - parseInt(246);
             for(var i = 0; i < cal.length;i++){
-                cal[i].innerHTML = parseInt(cal[i].innerHTML) - parseInt(cal[i].innerHTML)/2 ;
+                startVal = cal[i].getAttribute('data-val');
+                cal[i].innerHTML = parseInt(cal[i].innerHTML) - startVal ;
             }
         }
         
